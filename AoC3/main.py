@@ -1,13 +1,11 @@
 liste = open('cal.txt', 'r')
-arr2 = []
-arr1 = []
-setOf3 = []
+arr1, arr2, setOf3 = [], [], []
 
 for i in liste.readlines():
     if len(setOf3) == 2: #Aufgabe 2
         for j in i:
             if j in setOf3[0] and j in setOf3[1]:
-                doubles.append(j)
+                arr2.append(j)
                 setOf3 = []
                 break;
     else:
@@ -25,5 +23,5 @@ def getSum(arr): #
         else:
             sum += ord(k) - 64 + 26
     return sum
-print(getSum(doubles))
-print(getSum(arr1))
+print("Aufgabe 1: " + str(getSum(arr1)))
+print("Aufgabe 2: " + str(getSum(arr2)))
